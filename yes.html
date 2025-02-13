@@ -30,7 +30,35 @@
             50% { opacity: 0.8; }
             100% { transform: translateY(-150px) scale(1.5); opacity: 0; }
         }
-        /* Image button styling */
+        /* Pop-up styling */
+        .popup {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            z-index: 1000;
+        }
+        .popup h2 {
+            color: #ff4d6d;
+        }
+        .popup button {
+            background-color: #ff4d6d;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            border-radius: 5px;
+            margin-top: 10px;
+        }
+        .popup button:hover {
+            background-color: #e63950;
+        }
         
     </style>
 </head>
@@ -38,9 +66,17 @@
     <h2> if you didnt click the button me would have been very sad :(( </h2>
     <h2>but issok u clicked it so me is very happy hehe ❤️</h2>
 
-    <button onclick="redirectToKisses()">click another button hehe</button>
+    <button onclick="showPopup()">click another button hehe</button>
+
+    <!-- Pop-up Box -->
+    <div id="popup" class="popup">
+        <h2>💋 You got a big kiss! 💋</h2>
+        <p>Your girlfriend loves you so so much! 💖</p>
+        <button onclick="closePopup()">Awww! 💕</button>
+    </div>
 
     <script>
+        let heartInterval;
         function createHeart() {
             const heart = document.createElement("div");
             heart.classList.add("heart");
@@ -59,8 +95,12 @@
                 clearInterval(heartInterval);
             }, 3000); // 30,000ms = 30s
         }
-        function redirectToKisses() {
-            window.location.href = "https://shannatanjx.github.io/valentines/kisses.html";
+        function showPopup() {
+            document.getElementById("popup").style.display = "block";
+        }
+
+        function closePopup() {
+            document.getElementById("popup").style.display = "none";
         }
 
         window.onload = startHeartExplosion;
