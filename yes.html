@@ -16,19 +16,6 @@
         h1 {
             color: #ff4d6d;
         }
-        .heart {
-            position: absolute;
-            font-size: 20px;
-            color: #ff4d6d;
-            opacity: 1;
-            animation: float 1.5s ease-out forwards;
-        }
-        @keyframes float {
-            0% { transform: translateY(0) scale(1); opacity: 1; }
-            50% { opacity: 0.8; }
-            100% { transform: translateY(-150px) scale(1.5); opacity: 0; }
-        }
-        /* Pop-up styling */
         .popup {
             display: none;
             position: fixed;
@@ -41,8 +28,8 @@
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
             text-align: center;
             z-index: 1000;
-            width: 800px; /* Adjusted */
-            height: 300px; /* Increased height */
+            width: 800px;
+            height: 300px;
             max-width: 80%;
             opacity: 0;
             transition: transform 0.3s ease-out, opacity 0.3s ease-out;
@@ -54,8 +41,12 @@
             transform: translate(-50%, -50%) scale(1);
         }
 
-        .popup h2 {
-            color: #ff4d6d;
+        .popup-content {
+            display: none;
+        }
+
+        .popup-content.active {
+            display: block;
         }
 
         .popup button {
@@ -72,22 +63,13 @@
             background-color: #e63950;
         }
 
-        /* Hide pages inside the popup */
-        .popup-content {
-            display: none;
-        }
-
-        .popup-content.active {
-            display: block;
-        }
-        
     </style>
 </head>
 <body>
-    <h2> if you didnt click the button me would have been very sad :(( </h2>
+    <h2>if you didnt click the button me would have been very sad :((</h2>
     <h2>but issok u clicked it so me is very happy hehe ❤️</h2>
 
-    <button onclick="showPopup()">click tis if u wan kisses from me hehe </button>
+    <button onclick="showPopup()">click tis if u wan kisses from me hehe</button>
 
     <!-- Pop-up Box -->
     <div id="popup" class="popup">
@@ -96,115 +78,79 @@
             <p>hai baby, you know im not the best at expressing my love for you through words, but here are some things i would wanna say to you hehe. click next to find out love youu </p>
             <button onclick="nextPage(2)">next 💕</button>
         </div>
-        
+
         <div id="page2" class="popup-content">
             <h2>i really believe i had a love in first sight moment</h2>
-            <p> from the day that we met, i just know we had a special connection. i had never felt so comfortable talking to someone on the first day of meeting them but you were the exception </p>
+            <p>from the day that we met, i just knew we had a special connection. i had never felt so comfortable talking to someone on the first day of meeting them but you were the exception.</p>
             <button onclick="nextPage(3)">next 💕</button>
         </div>
 
         <div id="page3" class="popup-content">
             <h2>you really are so so important to me</h2>
-            <p>besides the fact that you were kindaa cute in my eyes at tat time hehe, i fell so hard for u so quickly even i couldnt believe it was happening </p>
+            <p>besides the fact that you were kinda cute in my eyes at that time hehe, i fell so hard for u so quickly even i couldnt believe it was happening.</p>
             <button onclick="nextPage(4)">next 💕</button>
         </div>
-    </div>
 
         <div id="page4" class="popup-content">
             <h2>i cant live without you</h2>
-            <p>but it indeed happened and now i really wouldnt know what to do without you hehe you have been kidnapped by me for the rest of our lives and i am not letting you go </p>
+            <p>but it indeed happened and now i really wouldn't know what to do without you hehe. you have been kidnapped by me for the rest of our lives and i am not letting you go.</p>
             <button onclick="nextPage(5)">next 💕</button>
         </div>
-    </div>
 
         <div id="page5" class="popup-content">
             <h2>i know i may be hard to deal with</h2>
-            <p> i am very sorry for all the mood swings that i always have which always causes our arguments and everytime it happens i feel very regretful afterwards :(( </p>
+            <p>i am very sorry for all the mood swings that i always have which always causes our arguments and everytime it happens i feel very regretful afterwards :(</p>
             <button onclick="nextPage(6)">next 💕</button>
         </div>
-    </div>
 
         <div id="page6" class="popup-content">
-            <h2>i know i may be hard to deal with</h2>
-            <p> but thank you for always comforting me and making sure i am okay and saying sorry even though i know its always my fault.  </p>
+            <h2>thank you for always being patient with me</h2>
+            <p>but thank you for always comforting me and making sure i am okay and saying sorry even though i know it's always my fault.</p>
             <button onclick="nextPage(7)">next 💕</button>
         </div>
-    </div>
 
         <div id="page7" class="popup-content">
-            <h2>i am really okay with the way you are oki</h2>
-            <p> baby trust me when i say this, i am always okay with u touching me and being horny. i know you truly love me and thats why i am always okay with you doing it oki  </p>
+            <h2>i am really okay with the way you are</h2>
+            <p>baby trust me when i say this, i am always okay with u touching me and being close. i know you truly love me and that's why i am always okay with you doing it.</p>
             <button onclick="nextPage(8)">next 💕</button>
         </div>
-    </div>
 
         <div id="page8" class="popup-content">
-            <h2>i am really okay with the way you are oki</h2>
-            <p> dont need to worry with going overboard because everytime i tell u to stop i know u will de hehe  </p>
+            <h2>i trust you completely</h2>
+            <p>don't need to worry about going overboard because everytime i tell u to stop, i know u will de hehe.</p>
             <button onclick="nextPage(9)">next 💕</button>
         </div>
-    </div>
 
         <div id="page9" class="popup-content">
             <h2>thank you for treating me well</h2>
-            <p> you really treat me like a princess and i will always be grateful for that. and i will promise to treat you the best because you deserve the whole world baby </p>
+            <p>you really treat me like a princess and i will always be grateful for that. and i will promise to treat you the best because you deserve the whole world baby.</p>
             <button onclick="nextPage(10)">next 💕</button>
         </div>
-    </div>
 
         <div id="page10" class="popup-content">
             <h2>0310</h2>
-            <p> i really love you so so much and i cant wait to spend the rest of my life with you <3 </p>
+            <p>i really love you so so much and i cant wait to spend the rest of my life with you ❤️</p>
             <button onclick="closePopup()">i love you</button>
         </div>
     </div>
 
     <script>
-        let heartInterval;
-
-        function createHeart() {
-            const heart = document.createElement("div");
-            heart.classList.add("heart");
-            heart.innerHTML = "❤️";
-            document.body.appendChild(heart);
-            heart.style.left = `${Math.random() * window.innerWidth}px`;
-            heart.style.top = `${Math.random() * (window.innerHeight - 200) + 100}px`;
-            heart.style.fontSize = `${Math.random() * 20 + 10}px`;
-            setTimeout(() => heart.remove(), 1500);
-        }
-
-        function startHeartExplosion() {
-            setInterval(createHeart, 200);
-
-            setTimeout(() => {
-                clearInterval(heartInterval);
-            }, 30000); // 30s
-        }
-
         function showPopup() {
             const popup = document.getElementById("popup");
             popup.style.display = "block";
-            setTimeout(() => {
-                popup.classList.add("show");
-            }, 10);
+            setTimeout(() => popup.classList.add("show"), 10);
         }
 
         function closePopup() {
             const popup = document.getElementById("popup");
             popup.classList.remove("show");
-            setTimeout(() => {
-                popup.style.display = "none";
-            }, 300);
+            setTimeout(() => popup.style.display = "none", 300);
         }
 
         function nextPage(pageNum) {
-            document.querySelectorAll(".popup-content").forEach(content => {
-                content.classList.remove("active");
-            });
+            document.querySelectorAll(".popup-content").forEach(content => content.classList.remove("active"));
             document.getElementById(`page${pageNum}`).classList.add("active");
         }
-
-        window.onload = startHeartExplosion;
     </script>
 
 </body>
