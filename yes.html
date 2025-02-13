@@ -30,11 +30,24 @@
             50% { opacity: 0.8; }
             100% { transform: translateY(-150px) scale(1.5); opacity: 0; }
         }
+        /* Image button styling */
+        .image-button {
+            background: url('heart.png') no-repeat center center;
+            background-size: cover;
+            width: 200px;
+            height: 200px;
+            border: none;
+            cursor: pointer;
+            display: block;
+            margin: 20px auto;
+        }
     </style>
 </head>
 <body>
     <h2> if you didnt click the button me would have been very sad :(( </h2>
     <h2>but issok u clicked it so me is very happy hehe ❤️</h2>
+
+    <button class="image-button" onclick="redirectToKisses()"></button>
 
     <script>
         function createHeart() {
@@ -54,6 +67,9 @@
             setTimeout(() => {
                 clearInterval(heartInterval);
             }, 10000); // 30,000ms = 30s
+        }
+        function redirectToKisses() {
+            window.location.href = "https://shannatanjx.github.io/valentines/kisses.html";
         }
 
         window.onload = startHeartExplosion;
