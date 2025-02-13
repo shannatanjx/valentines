@@ -4,33 +4,34 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;600&display=swap" rel="stylesheet">
-    <title>Yay! ❤️</title>
+    <title>Yay! 💜</title>
     <style>
         body {
             font-family: 'Baloo 2', sans-serif;
             text-align: center;
             padding: 50px;
-            background-color: #fff0f6;
+            background-color: #E6D6FF; /* Pastel Purple */
             overflow: hidden;
         }
         h2 {
-            color: #ff4d6d;
+            color: #5A3E77; /* Deep Purple */
         }
 
         button {
-            background-color: #ff7597; /* Pink background */
-            color: white; /* White text */
-            border: none; /* Remove border */
-            padding: 15px 30px; /* Add padding for better appearance */
-            border-radius: 25px; /* Rounded corners */
-            font-size: 16px; /* Adjust text size */
-            font-family: 'Baloo 2', sans-serif; /* Keep the font consistent */
-            cursor: pointer; /* Pointer cursor on hover */
-            transition: background-color 0.3s ease-in-out; /* Smooth transition */
+            background-color: #C8A2C8; /* Soft Purple */
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            border-radius: 25px;
+            font-size: 16px;
+            font-family: 'Baloo 2', sans-serif;
+            cursor: pointer;
+            transition: background-color 0.3s ease-in-out, transform 0.2s ease-in-out;
         }
 
         button:hover {
-            background-color: #ff5c81; /* Darker pink on hover */
+            background-color: #B088B8; /* Darker Purple */
+            transform: scale(1.05);
         }
 
         .popup {
@@ -42,7 +43,7 @@
             background-color: white;
             padding: 30px;
             border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
             text-align: center;
             z-index: 1000;
             width: 800px;
@@ -67,7 +68,7 @@
         }
 
         .popup button {
-            background-color: #ff4d6d;
+            background-color: #A06CD5; /* Soft Purple */
             color: white;
             border: none;
             padding: 10px 20px;
@@ -77,27 +78,27 @@
         }
 
         .popup button:hover {
-            background-color: #e63950;
+            background-color: #8B5FBF; /* Darker Pastel Purple */
         }
 
     </style>
 </head>
 <body>
     <h2>if you didnt click the button me would have been very sad :((</h2>
-    <h2>but issok u clicked it so me is very happy hehe ❤️</h2>
+    <h2>but issok u clicked it so me is very happy hehe 💜</h2>
 
     <button onclick="showPopup()">click tis if u wan kisses from me hehe</button>
 
     <!-- Pop-up Box -->
     <div id="popup" class="popup">
         <div id="page1" class="popup-content active">
-            <h2>💋 mwahh here is your kiss hehe 💋</h2>
+            <h2>💜 mwahh here is your kiss hehe 💜</h2>
             <p>hai baby, you know im not the best at expressing my love for you through words, but here are some things i would wanna say to you hehe. click next to find out love youu </p>
             <button onclick="nextPage(2)">next 💕</button>
         </div>
 
         <div id="page2" class="popup-content">
-            <h2>i really believe i had a love in first sight moment</h2>
+            <h2>i really believe i had a love at first sight moment</h2>
             <p>from the day that we met, i just knew we had a special connection. i had never felt so comfortable talking to someone on the first day of meeting them but you were the exception.</p>
             <button onclick="nextPage(3)">next 💕</button>
         </div>
@@ -146,7 +147,7 @@
 
         <div id="page10" class="popup-content">
             <h2>0310</h2>
-            <p>i really love you so so much and i cant wait to spend the rest of my life with you ❤️</p>
+            <p>i really love you so so much and i cant wait to spend the rest of my life with you 💜</p>
             <button onclick="closePopup()">i love you</button>
         </div>
     </div>
