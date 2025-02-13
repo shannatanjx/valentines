@@ -11,6 +11,7 @@
             text-align: center;
             padding: 50px;
             background-color: #f4f4f4;
+            overflow: hidden;
         }
         h1 {
             color: purple;
@@ -18,18 +19,87 @@
         h2 {
             color: purple;
         } 
+        .button {
+            padding: 12px 24px;
+            background-color: #ff85a2;
+            color: white;
+            border: none;
+            border-radius: 20px;
+            font-size: 18px;
+            cursor: pointer;
+            font-family: 'Baloo 2', sans-serif;
+            box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+            position: relative;
+            z-index: 10;
+        }
+        .button:hover {
+            background-color: #ff6b92;
+        }
+
+        /* Heart Styles */
+        .heart {
+            position: absolute;
+            font-size: 20px;
+            color: #ff4d6d;
+            opacity: 1;
+            animation: float 1.5s ease-out forwards;
+        }
+
+        /* Heart Animation */
+        @keyframes float {
+            0% {
+                transform: translateY(0) scale(1);
+                opacity: 1;
+            }
+            50% {
+                opacity: 0.8;
+            }
+            100% {
+                transform: translateY(-150px) scale(1.5);
+                opacity: 0;
+            }
+        }
     </style>
 </head>
 <body>
     <h1> Hai my dearest boyfriend </h1>
-    <h2> I am very sorry your valentines gift couldnt come in time soooo i decided to make this website for you hehe </h2>
-    <button class="button" onclick="redirectToPage()">If you love your girlfriend very very much click this button hehe</button>
+    <h2> I am very sorry your Valentine's gift couldn't come in time soooo I decided to make this website for you hehe </h2>
+    <button class="button" onclick="startHeartsAndRedirect()">If you love your girlfriend very very much click this button hehe</button>
 
-<script>
-    function redirectToPage() {
-      window.location.href = "https://shannatanjx.github.io/valentines/yes.html"; 
-    }
-  </script>
-    
+    <script>
+        function startHeartsAndRedirect() {
+            for (let i = 0; i < 15; i++) {
+                createHeart();
+            }
+
+            // Redirect after 2 seconds to allow hearts to show
+            setTimeout(() => {
+                window.location.href = "https://shannatanjx.github.io/valentines/yes.html";
+            }, 2000);
+        }
+
+        function createHeart() {
+            const heart = document.createElement("div");
+            heart.classList.add("heart");
+            heart.innerHTML = "❤️";
+            document.body.appendChild(heart);
+
+            // Random positioning near the button
+            let x = Math.random() * window.innerWidth;
+            let y = Math.random() * (window.innerHeight - 200) + 100;
+            heart.style.left = `${x}px`;
+            heart.style.top = `${y}px`;
+
+            // Random size
+            let size = Math.random() * 20 + 10;
+            heart.style.fontSize = `${size}px`;
+
+            // Remove heart after animation
+            setTimeout(() => {
+                heart.remove();
+            }, 1500);
+        }
+    </script>
+
 </body>
 </html>
