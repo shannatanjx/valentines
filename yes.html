@@ -1,5 +1,3 @@
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -30,7 +28,7 @@
             50% { opacity: 0.8; }
             100% { transform: translateY(-150px) scale(1.5); opacity: 0; }
         }
-        /* Pop-up styling */
+        /* Pop-up styling with animation */
         .popup {
             display: none;
             position: fixed;
@@ -58,6 +56,7 @@
         .popup h2 {
             color: #ff4d6d;
         }
+
         .popup button {
             background-color: #ff4d6d;
             color: white;
@@ -67,6 +66,7 @@
             border-radius: 5px;
             margin-top: 10px;
         }
+
         .popup button:hover {
             background-color: #e63950;
         }
@@ -88,6 +88,7 @@
 
     <script>
         let heartInterval;
+        
         function createHeart() {
             const heart = document.createElement("div");
             heart.classList.add("heart");
@@ -108,7 +109,10 @@
         }
         function showPopup() {
             const popup = document.getElementById("popup");
-            popup.classList.add("show");
+            popup.style.display = "block";
+            setTimeout(() => {
+                popup.classList.add("show");
+            }, 10); // Delay for smooth transition
         }
 
         function closePopup() {
@@ -116,7 +120,7 @@
             popup.classList.remove("show");
             setTimeout(() => {
                 popup.style.display = "none";
-            }, 300); // Matches the transition time
+            }, 300); // Matches transition duration
         }
 
         window.onload = startHeartExplosion;
