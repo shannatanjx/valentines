@@ -50,6 +50,10 @@
 
         function startHeartExplosion() {
             setInterval(createHeart, 200);
+
+            setTimeout(() => {
+                clearInterval(heartInterval);
+            }, 30000); // 30,000ms = 30s
         }
 
         window.onload = startHeartExplosion;
