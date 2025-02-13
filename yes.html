@@ -1,2 +1,97 @@
 <h2> if you didnt click the button me would have been very sad :(( </h2>
 <h2> but issok u clicked it so me is very happy hehe </h2>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Heart Explosion</title>
+  <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Baloo 2', sans-serif;
+      text-align: center;
+      margin-top: 50px;
+      background-color: #fff0f6;
+      overflow: hidden;
+    }
+    .cute-button {
+      padding: 12px 24px;
+      background-color: #ff85a2;
+      color: white;
+      border: none;
+      border-radius: 20px;
+      font-size: 18px;
+      cursor: pointer;
+      font-family: 'Baloo 2', sans-serif;
+      box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+      position: relative;
+      z-index: 10;
+    }
+    .cute-button:hover {
+      background-color: #ff6b92;
+    }
+    
+    /* Heart Styles */
+    .heart {
+      position: absolute;
+      font-size: 20px;
+      color: #ff4d6d;
+      opacity: 1;
+      animation: float 1.5s ease-out forwards;
+    }
+
+    /* Heart Animation */
+    @keyframes float {
+      0% {
+        transform: translateY(0) scale(1);
+        opacity: 1;
+      }
+      50% {
+        opacity: 0.8;
+      }
+      100% {
+        transform: translateY(-150px) scale(1.5);
+        opacity: 0;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <button class="cute-button" onclick="explodeHearts()">Click Me! 💖</button>
+
+  <script>
+    function explodeHearts() {
+      for (let i = 0; i < 15; i++) {
+        createHeart();
+      }
+    }
+
+    function createHeart() {
+      const heart = document.createElement("div");
+      heart.classList.add("heart");
+      heart.innerHTML = "❤️";
+      document.body.appendChild(heart);
+
+      // Random positioning near the button
+      let x = Math.random() * window.innerWidth;
+      let y = Math.random() * (window.innerHeight - 200) + 100;
+      heart.style.left = `${x}px`;
+      heart.style.top = `${y}px`;
+
+      // Random size
+      let size = Math.random() * 20 + 10;
+      heart.style.fontSize = `${size}px`;
+
+      // Remove heart after animation
+      setTimeout(() => {
+        heart.remove();
+      }, 1500);
+    }
+  </script>
+
+</body>
+</html>
+
